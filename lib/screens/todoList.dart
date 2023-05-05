@@ -13,7 +13,7 @@ class _todoListState extends State<todoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0.0,
+        // elevation: 0.0,
         centerTitle: true,
         title: Text(
           'To Do',
