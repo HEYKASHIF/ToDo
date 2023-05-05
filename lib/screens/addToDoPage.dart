@@ -21,6 +21,7 @@ class _addToDoPageState extends State<addToDoPage> {
         ),
       ),
       body: ListView(
+        padding: EdgeInsets.all(20),
         children: [
           TextField(
             decoration: InputDecoration(
@@ -31,6 +32,7 @@ class _addToDoPageState extends State<addToDoPage> {
             decoration: InputDecoration(
               hintText: 'Description',
             ),
+            keyboardType: TextInputType.multiline,
             minLines: 3,
             maxLines: 8,
           )
