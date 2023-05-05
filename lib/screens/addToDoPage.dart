@@ -58,7 +58,7 @@ class _addToDoPageState extends State<addToDoPage> {
     );
   }
 
-  void submitData() async {
+  Future<void> submitData() async {
     //get data from the form
     final title = TitleController.text;
     final description = DescriptionController.text;
