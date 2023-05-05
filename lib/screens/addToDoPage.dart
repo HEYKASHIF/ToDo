@@ -86,6 +86,12 @@ class _addToDoPageState extends State<addToDoPage> {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
 
+    void ShowErrorMsg(String message) {
+      final snackBar = SnackBar(content: Text(message));
+
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+
     if (response.statusCode == 201) {
       print('Creation Success');
       ShowSuccessMsg('Creation Success');
