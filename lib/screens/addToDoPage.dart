@@ -74,9 +74,17 @@ class _addToDoPageState extends State<addToDoPage> {
     final url = 'https://api.nstack.in/v1/todos';
 
     final uri = Uri.parse(url);
-    final response = await http.post(uri, body: jsonEncode(body));
+    final response = await http.post(
+      uri,
+      body: jsonEncode(body),
+      headers: {"content-type": "application/json"},
+    );
 
-    print(response);
+    if (response.statusCode == 201) {
+      print('success');
+    } else {
+      print('Error');
+    }
 
     //show success or fail message based on the status
   }
