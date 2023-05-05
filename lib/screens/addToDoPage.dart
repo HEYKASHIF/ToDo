@@ -20,6 +20,16 @@ class _addToDoPageState extends State<addToDoPage> {
           ),
         ),
       ),
+      body: ListView(
+        children: [
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Title',
+            ),
+          ),
+          TextField()
+        ],
+      ),
     );
   }
 }
