@@ -27,7 +27,11 @@ class _addToDoPageState extends State<addToDoPage> {
               hintText: 'Title',
             ),
           ),
-          TextField()
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Description',
+            ),
+          )
         ],
       ),
     );
