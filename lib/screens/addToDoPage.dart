@@ -8,6 +8,8 @@ class addToDoPage extends StatefulWidget {
 }
 
 class _addToDoPageState extends State<addToDoPage> {
+  TextEditingController TitleController = TextEditingController();
+  TextEditingController DescriptionController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +26,7 @@ class _addToDoPageState extends State<addToDoPage> {
         padding: EdgeInsets.all(20),
         children: [
           TextField(
+            controller: TitleController,
             decoration: InputDecoration(
               hintText: 'Title',
             ),
@@ -32,6 +35,7 @@ class _addToDoPageState extends State<addToDoPage> {
             height: 20,
           ),
           TextField(
+            controller: DescriptionController,
             decoration: InputDecoration(
               hintText: 'Description',
             ),
@@ -55,6 +59,9 @@ class _addToDoPageState extends State<addToDoPage> {
 
   void submitData() {
     //get data from the form
+    final title = TitleController.text;
+    final description = DescriptionController.text;
     //submit the data to the server
+    //show success or fail message based on the status
   }
 }
