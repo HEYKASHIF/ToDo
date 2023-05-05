@@ -12,8 +12,12 @@ class _addToDoPageState extends State<addToDoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'Add To Do',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
       ),
     );
