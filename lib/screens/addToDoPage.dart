@@ -35,7 +35,13 @@ class _addToDoPageState extends State<addToDoPage> {
             keyboardType: TextInputType.multiline,
             minLines: 3,
             maxLines: 8,
-          )
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              'Submit',
+            ),
+          ),
         ],
       ),
     );
