@@ -38,4 +38,16 @@ class _todoListState extends State<todoList> {
     );
     Navigator.push(context, Route);
   }
+
+  Future<void> FetchData() async {
+    final url = 'https://api.nstack.in/v1/todos';
+
+    final uri = Uri.parse(url);
+    final response = await http.post(
+      uri,
+      headers: {"content-type": "application/json"},
+    );
+
+    //show success or fail message based on the status
+  }
 }
