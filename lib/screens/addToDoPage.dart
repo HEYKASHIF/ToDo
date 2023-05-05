@@ -55,6 +55,6 @@ class _addToDoPageState extends State<addToDoPage> {
 
   void submitData() {
     //get data from the form
-    //
+    //submit the data to the server
   }
 }
