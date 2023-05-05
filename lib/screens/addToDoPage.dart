@@ -28,6 +28,9 @@ class _addToDoPageState extends State<addToDoPage> {
               hintText: 'Title',
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           TextField(
             decoration: InputDecoration(
               hintText: 'Description',
