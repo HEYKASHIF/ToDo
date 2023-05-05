@@ -87,7 +87,15 @@ class _addToDoPageState extends State<addToDoPage> {
     }
 
     void ShowErrorMsg(String message) {
-      final snackBar = SnackBar(content: Text(message));
+      final snackBar = SnackBar(
+        content: Text(
+          message,
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.red,
+      );
 
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
@@ -95,7 +103,7 @@ class _addToDoPageState extends State<addToDoPage> {
     if (response.statusCode == 201) {
       ShowSuccessMsg('Creation Success');
     } else {
-      ShowErrorMsg('Creation Success');
+      ShowErrorMsg('Creation Failed');
     }
 
     //show success or fail message based on the status
