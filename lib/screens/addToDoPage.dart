@@ -10,6 +10,6 @@ class addToDoPage extends StatefulWidget {
 class _addToDoPageState extends State<addToDoPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
