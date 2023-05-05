@@ -31,6 +31,8 @@ class _addToDoPageState extends State<addToDoPage> {
             decoration: InputDecoration(
               hintText: 'Description',
             ),
+            minLines: 3,
+            maxLines: 8,
           )
         ],
       ),
