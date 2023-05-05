@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class addToDoPage extends StatefulWidget {
   const addToDoPage({super.key});
@@ -62,6 +63,17 @@ class _addToDoPageState extends State<addToDoPage> {
     final title = TitleController.text;
     final description = DescriptionController.text;
     //submit the data to the server
+    final body = {
+      "title": title,
+      "description": description,
+      "is_completed": false
+    };
+
+    final url = 'https://api.nstack.in/v1/todos';
+
+    final uri = Uri.parse(url);
+    http.post(uri);
+
     //show success or fail message based on the status
   }
 }
