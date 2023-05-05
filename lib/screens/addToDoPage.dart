@@ -80,10 +80,18 @@ class _addToDoPageState extends State<addToDoPage> {
       headers: {"content-type": "application/json"},
     );
 
+    void ShowSuccessMsg(String message) {
+      final snackBar = SnackBar(content: Text(message));
+
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+
     if (response.statusCode == 201) {
-      print('success');
+      print('Creation Success');
+      ShowSuccessMsg('Creation Success');
     } else {
-      print('Error');
+      print('Creation Failed');
+      print(response.body);
     }
 
     //show success or fail message based on the status
