@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -48,7 +50,7 @@ class _addToDoPageState extends State<addToDoPage> {
             height: 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: submitData,
             child: Text(
               'Submit',
             ),
@@ -72,7 +74,9 @@ class _addToDoPageState extends State<addToDoPage> {
     final url = 'https://api.nstack.in/v1/todos';
 
     final uri = Uri.parse(url);
-    final response = await http.post(uri);
+    final response = await http.post(uri, body: jsonEncode(body));
+
+    print(response);
 
     //show success or fail message based on the status
   }
