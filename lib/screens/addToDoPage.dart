@@ -93,11 +93,9 @@ class _addToDoPageState extends State<addToDoPage> {
     }
 
     if (response.statusCode == 201) {
-      print('Creation Success');
       ShowSuccessMsg('Creation Success');
     } else {
-      print('Creation Failed');
-      print(response.body);
+      ShowErrorMsg('Creation Success');
     }
 
     //show success or fail message based on the status
