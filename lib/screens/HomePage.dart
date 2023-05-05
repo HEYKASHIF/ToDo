@@ -10,7 +10,11 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'To Do',
-          style: TextStyle(),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
       ),
     );
