@@ -58,7 +58,7 @@ class _addToDoPageState extends State<addToDoPage> {
     );
   }
 
-  void submitData() {
+  void submitData() async {
     //get data from the form
     final title = TitleController.text;
     final description = DescriptionController.text;
@@ -72,7 +72,7 @@ class _addToDoPageState extends State<addToDoPage> {
     final url = 'https://api.nstack.in/v1/todos';
 
     final uri = Uri.parse(url);
-    http.post(uri);
+    final response = await http.post(uri);
 
     //show success or fail message based on the status
   }
