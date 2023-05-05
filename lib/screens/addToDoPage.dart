@@ -102,6 +102,8 @@ class _addToDoPageState extends State<addToDoPage> {
 
     if (response.statusCode == 201) {
       ShowSuccessMsg('Creation Success');
+      TitleController.text = '';
+      DescriptionController.text = '';
     } else {
       ShowErrorMsg('Creation Failed');
     }
