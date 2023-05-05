@@ -25,7 +25,7 @@ class _todoListState extends State<todoList> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: navigateToAddPage,
         label: Text('Add ToDo'),
       ),
     );
@@ -35,5 +35,6 @@ class _todoListState extends State<todoList> {
     final Route = MaterialPageRoute(
       builder: (context) => addToDoPage(),
     );
+    Navigator.push(context, Route);
   }
 }
