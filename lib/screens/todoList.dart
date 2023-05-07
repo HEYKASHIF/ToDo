@@ -40,13 +40,10 @@ class _todoListState extends State<todoList> {
   }
 
   Future<void> FetchData() async {
-    final url = 'https://api.nstack.in/v1/todos';
+    final url = 'https://api.nstack.in/v1/todos?page=1&limit=10';
 
     final uri = Uri.parse(url);
-    final response = await http.post(
-      uri,
-      headers: {"content-type": "application/json"},
-    );
+    final response = await http.post(uri);
 
     //show success or fail message based on the status
   }
