@@ -11,6 +11,7 @@ class todoList extends StatefulWidget {
 }
 
 class _todoListState extends State<todoList> {
+  List item = [];
   @override
   void initState() {
     super.initState();
@@ -54,7 +55,12 @@ class _todoListState extends State<todoList> {
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body) as Map;
       final result = json['items'] as List;
-    } else {}
+      setState(() {
+        item = result;
+      });
+    } else {
+      // show error
+    }
 
     //show success or fail message based on the status
   }
