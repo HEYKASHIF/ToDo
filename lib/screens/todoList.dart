@@ -38,6 +38,7 @@ class _todoListState extends State<todoList> {
         itemBuilder: (context, index) {
           final item = items[index] as Map;
           return ListTile(
+            leading: CircleAvatar(child: Text('${index + 1}')),
             title: Text(item['title']),
             subtitle: Text(item['description']),
           );
