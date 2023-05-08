@@ -11,7 +11,7 @@ class todoList extends StatefulWidget {
 }
 
 class _todoListState extends State<todoList> {
-  List item = [];
+  List items = [];
   @override
   void initState() {
     super.initState();
@@ -34,9 +34,12 @@ class _todoListState extends State<todoList> {
         ),
       ),
       body: ListView.builder(
+        itemCount: items.length,
         itemBuilder: (context, index) {
+          final item = items[index] as Map;
           return ListTile(
-            title: Text('mohd kashif'),
+            title: Text(item['title']),
+            subtitle: Text(item['description']),
           );
         },
       ),
@@ -63,7 +66,7 @@ class _todoListState extends State<todoList> {
       final json = jsonDecode(response.body) as Map;
       final result = json['items'] as List;
       setState(() {
-        item = result;
+        items = result;
       });
     } else {
       // show error
