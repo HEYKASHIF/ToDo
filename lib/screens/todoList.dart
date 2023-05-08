@@ -51,8 +51,8 @@ class _todoListState extends State<todoList> {
 
     final uri = Uri.parse(url);
     final response = await http.get(uri);
-    print(response.statusCode);
-    print(response.body);
+    if (response.statusCode == 200) {
+    } else {}
 
     //show success or fail message based on the status
   }
