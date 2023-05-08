@@ -33,6 +33,13 @@ class _todoListState extends State<todoList> {
           ),
         ),
       ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text('mohd kashif'),
+          );
+        },
+      ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: navigateToAddPage,
         label: Text('Add ToDo'),
