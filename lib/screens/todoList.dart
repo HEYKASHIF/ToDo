@@ -33,16 +33,31 @@ class _todoListState extends State<todoList> {
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          final item = items[index] as Map;
-          return ListTile(
-            leading: CircleAvatar(child: Text('${index + 1}')),
-            title: Text(item['title']),
-            subtitle: Text(item['description']),
-          );
-        },
+      body: RefreshIndicator(
+        onRefresh: FetchData,
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            final item = items[index] as Map;
+            return ListTile(
+              leading: CircleAvatar(child: Text('${index + 1}')),
+              title: Text(item['title']),
+              subtitle: Text(item['description']),
+              trailing: PopupMenuButton(
+                itemBuilder: (context) {
+                  return [
+                    PopupMenuItem(
+                      child: Text('edit'),
+                    ),
+                    PopupMenuItem(
+                      child: Text('delete'),
+                    )
+                  ];
+                },
+              ),
+            );
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: navigateToAddPage,
